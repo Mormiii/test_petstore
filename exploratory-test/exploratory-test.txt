@@ -1,0 +1,67 @@
+Exploratory Test Charter
+
+Charter: Following webpage: https://en.wikipedia.org/w/index.php?search is the object of testing.
+
+Date: 2022.03.14.
+Tester: Dóra Dékány
+Duration: Short (30-60 mins)
+Test Design and Execution: 95%
+Bug investigation and reporting: 5%
+Session setup: 0%
+
+Data files: **/test_petstore/exploratory-test/printscreens-test
+
+Test Plan- Areas of testing
+Functional tests = FT
+1. write to the search field multiple words - search for the term - there are results related to the searched words
+2. when search field is empty - search - no results are shown
+3. open "Advances search:" try out searching with different settings
+4. open "Search in:" try out searching with different settings
+Non functional tests:
+
+-usability:
+page responsiveness= PR
+1. shrink page on notebook
+2. device: open webpage on phone
+
+-security=SEC
+inspect page using security tool from Chrome web developer tools
+1. check if certificate valid and trusted
+2. connection is secure and encrypted
+3. valid HTTPS
+
+-performance = PERF
+inspect page using performance tool from Chrome web developer tools
+1. record a search and check metrics
+2. refresh page and inspect network - timing (TTFB-Time to First Byte)
+//server response
+
+Validation
+FCP(First Contentful Paint) : 1.8 seconds or less.
+LCP(Largest Contentful Paint) : 2.5 seconds or less.
+TTFB < 200 ms
+
+
+Test Results:
+PR-1: passed
+PR-2: passed
+
+SEC-1: passed : Avast trusted CA
+SEC-2: passed
+SEC-3: passed
+
+PERF-1: passed
+max. FCP= 1028.5 ms < 1,8 sec
+max. LCP= 1094.5 ms < 2,5 sec
+PERF-2: failed
+TTFB = 1,16 sec > 200 ms
+
+FT-1: passed
+FT-2: passed
+FT-3: passed
+FT-4: passed
+
+Possible Improvements:
+Performance TTFB - could be better
+
+
